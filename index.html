@@ -958,5 +958,124 @@
       </div>
     </div>
   </footer>
+
+  <!-- Contact Popup -->
+  <div id="contact-popup" style="
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  ">
+    <!-- Bubble -->
+    <div id="popup-bubble" style="
+      display: none;
+      background: #ffffff;
+      border: 1px solid #ded7cb;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+      padding: 28px 28px 24px;
+      width: 300px;
+      margin-bottom: 14px;
+      position: relative;
+    ">
+      <!-- Close -->
+      <button onclick="document.getElementById('popup-bubble').style.display='none'" style="
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #716b63;
+        line-height: 1;
+        padding: 0;
+      ">&times;</button>
+
+      <div style="
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #a9823a;
+        font-weight: 700;
+        margin-bottom: 10px;
+      ">Exklusive Wohnlagen</div>
+
+      <div style="
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #1f1f1f;
+        margin-bottom: 10px;
+        letter-spacing: -0.02em;
+      ">Ihre geschützte Wohnwelt wartet.</div>
+
+      <p style="
+        font-size: 14px;
+        color: #716b63;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      ">Sprechen Sie diskret mit uns über Ihre Möglichkeiten im Cologne Project oder weiteren Entwicklungen im DACH-Raum.</p>
+
+      <a href="mailto:kontakt@johanis-capital.de" style="
+        display: block;
+        text-align: center;
+        padding: 12px 20px;
+        background: #1f1f1f;
+        color: #ffffff;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        border: 1px solid #1f1f1f;
+        text-decoration: none;
+        transition: 0.2s ease;
+        border-radius: 999px;
+      "
+      onmouseover="this.style.background='#a9823a';this.style.borderColor='#a9823a'"
+      onmouseout="this.style.background='#1f1f1f';this.style.borderColor='#1f1f1f'"
+      >Persönliches Gespräch anfragen</a>
+    </div>
+
+    <!-- Toggle Button -->
+    <div style="display: flex; justify-content: flex-end;">
+      <button id="popup-toggle" onclick="
+        var b = document.getElementById('popup-bubble');
+        b.style.display = b.style.display === 'none' ? 'block' : 'none';
+      " style="
+        background: #1f1f1f;
+        color: #ffffff;
+        border: none;
+        border-radius: 999px;
+        padding: 14px 22px;
+        font-size: 14px;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+        transition: background 0.2s ease;
+      "
+      onmouseover="this.style.background='#a9823a'"
+      onmouseout="this.style.background='#1f1f1f'"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Diskret anfragen
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Auto-show popup after 4 seconds
+    setTimeout(function() {
+      var bubble = document.getElementById('popup-bubble');
+      if (bubble.style.display === 'none') {
+        bubble.style.display = 'block';
+      }
+    }, 4000);
+  </script>
+
 </body>
 </html>
