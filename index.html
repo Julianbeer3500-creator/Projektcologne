@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Johanis Capital | Gated Communities im DACH-Raum</title>
+  <meta
+    name="description"
+    content="Johanis Capital entwickelt hochwertige Gated Communities im DACH-Raum mit Concierge Service, Sicherheitsdienst und nachhaltigen Wohnkonzepten."
+  />
+
+  <style>
+    :root {
+      --gold: #a9823a;
+      --gold-soft: #d7bd82;
+      --dark: #1f1f1f;
+      --soft: #f6f3ee;
+      --white: #ffffff;
+      --muted: #716b63;
+      --line: #ded7cb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo img {
+      width: 178px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: var(--dark);
+      color: var(--white);
+      border: 1px solid var(--dark);
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .button.light {
+      background: transparent;
+      color: var(--dark);
+      border-color: var(--line);
+    }
+
+    .button.light:hover {
+      color: var(--white);
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .button.hero-button {
+      background: var(--white);
+      color: var(--dark);
+      border-color: var(--white);
+    }
+
+    .button.hero-button:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+
+    .hero {
+      min-height: calc(100vh - 86px);
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.28)),
+        url("bilder/vogelperspektive.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 840px;
+      padding: 110px 0 96px;
+    }
+
+    .hero-logo {
+      width: 230px;
+      background: rgba(255,255,255,0.92);
+      padding: 16px 20px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 720px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    section {
+      padding: 104px 0;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      margin-bottom: 54px;
+    }
+
+    .section-intro h2,
+    .split-content h2,
+    .contact-box h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .section-intro p,
+    .split-content p,
+    .contact-box p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .soft {
+      background: var(--soft);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 32px;
+      min-height: 270px;
+    }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .image-strip {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 1fr;
+      gap: 18px;
+      margin-top: 56px;
+    }
+
+    .image-tile {
+      min-height: 360px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-tile.tall {
+      min-height: 470px;
+    }
+
+    .image-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.92);
+      color: var(--dark);
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .split-image {
+      min-height: 580px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .split-content p {
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      margin-top: 30px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+    }
+
+    .feature strong {
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .project-highlight {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .project-highlight-image {
+      min-height: 640px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project-highlight-content {
+      padding: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-highlight-content h3 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .project-highlight-content p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 28px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--soft);
+    }
+
+    .projects-small {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 26px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .project-card-image {
+      height: 360px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project-card-body {
+      padding: 32px;
+    }
+
+    .project-card-body h3 {
+      font-size: 28px;
+      line-height: 1.18;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .project-card-body p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      min-height: 280px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+      min-height: 576px;
+    }
+
+    .quote {
+      background:
+        linear-gradient(90deg, rgba(31,31,31,0.86), rgba(31,31,31,0.42)),
+        url("bilder/hero-aussen.jpg");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 112px 0;
+    }
+
+    .quote blockquote {
+      max-width: 930px;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 400;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 28px;
+      color: var(--gold-soft);
+      font-size: 15px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .contact {
+      background: var(--soft);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      padding: 56px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      align-content: center;
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 42px 0;
+      background: var(--dark);
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-inner img {
+      width: 160px;
+      background: white;
+      padding: 10px 14px;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .grid-3,
+      .split,
+      .project-highlight,
+      .projects-small,
+      .contact-box,
+      .image-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item.large {
+        grid-column: span 2;
+      }
+
+      section {
+        padding: 76px 0;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .project-highlight-image,
+      .split-image,
+      .image-tile,
+      .image-tile.tall {
+        min-height: 390px;
+      }
+
+      .project-highlight-content,
+      .contact-box {
+        padding: 34px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.large {
+        grid-column: span 1;
+        min-height: 390px;
+      }
+
+      .hero-logo {
+        width: 190px;
+      }
+
+      .logo img {
+        width: 150px;
+      }
+
+      .feature {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="Johanis Capital Startseite">
+        <img src="bilder/logo.jpg" alt="Johanis Capital Logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#anspruch">Anspruch</a>
+        <a href="#service">Service</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a class="button light" href="#kontakt">Gespräch vereinbaren</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <img class="hero-logo" src="bilder/logo.jpg" alt="Johanis Capital Logo" />
+
+        <div class="eyebrow">Projektentwicklung im DACH-Raum</div>
+
+        <h1>Geschützte Wohnwelten für Menschen, die bewusst leben.</h1>
+
+        <p>
+          Johanis Capital entwickelt hochwertige Gated Communities mit Concierge Service,
+          Sicherheitsdienst und nachhaltigen Versorgungskonzepten - für Eigentümer, Familien
+          und Investoren mit hohem Anspruch an Ruhe, Qualität und Verlässlichkeit.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button hero-button" href="#projekte">Projekte ansehen</a>
+          <a class="button" href="#service">Service & Sicherheit</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="anspruch">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">Unser Anspruch</div>
+
+          <h2>Wohnen beginnt dort, wo Sicherheit selbstverständlich wird.</h2>
+
+          <p>
+            Wir entwickeln Wohnorte, die architektonische Qualität, Privatheit und Service
+            miteinander verbinden. Nicht laut, nicht beliebig - sondern ruhig, klar und auf
+            langfristige Lebensqualität ausgerichtet.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Private Communities</h3>
+            <p>
+              Geschützte Wohnumfelder mit kontrollierten Zugängen, diskreter Präsenz und
+              einem spürbaren Gefühl von Geborgenheit.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Concierge Service</h3>
+            <p>
+              Persönliche Ansprechpartner vor Ort entlasten Bewohner im Alltag und sorgen
+              für einen kultivierten, verlässlichen Ablauf.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Nachhaltige Qualität</h3>
+            <p>
+              Hochwertige Bauweise, zukunftsfähige Energieversorgung und anpassbare
+              Grundrisse schaffen dauerhaft wertbeständige Immobilien.
+            </p>
+          </article>
+        </div>
+
+        <div class="image-strip">
+          <div
+            class="image-tile tall"
+            style="background-image: url('bilder/community-tag.jpg');"
+            role="img"
+            aria-label="Private Community bei Tag"
+          >
+            <div class="image-caption">Hochwertige Wohnarchitektur mit privatem Charakter</div>
+          </div>
+
+          <div
+            class="image-tile"
+            style="background-image: url('bilder/wohnung-terrasse.jpg');"
+            role="img"
+            aria-label="Helle Wohnung mit Terrasse"
+          >
+            <div class="image-caption">Ruhige Innenräume mit Blick ins Grüne</div>
+          </div>
+
+          <div
+            class="image-tile tall"
+            style="background-image: url('bilder/gated-einfahrt.jpg');"
+            role="img"
+            aria-label="Geschützte Einfahrt einer Gated Community"
+          >
+            <div class="image-caption">Kontrollierter Zugang, diskret in das Ensemble eingebettet</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="soft">
+      <div class="container split">
+        <div
+          class="split-image"
+          style="background-image: url('bilder/concierge-lobby.jpg');"
+          role="img"
+          aria-label="Concierge Lobby mit Sicherheitsdienst"
+        ></div>
+
+        <div class="split-content">
+          <div class="eyebrow">Service und Sicherheit</div>
+
+          <h2>Diskret organisiert. Persönlich spürbar.</h2>
+
+          <p>
+            Vermögende Menschen und Familien wünschen sich ein Zuhause, das schützt,
+            entlastet und mitdenkt. Unsere Konzepte verbinden bauliche Sicherheit mit
+            professionellen Dienstleistungen und einem Serviceverständnis, das die
+            Privatsphäre respektiert.
+          </p>
+
+          <p>
+            Der Sicherheitsdienst ist in das Wohnkonzept integriert - präsent, wenn nötig,
+            zurückhaltend im Alltag. Der Concierge Service schafft Orientierung,
+            Verlässlichkeit und einen Ansprechpartner, der das Haus kennt.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature">
+              <strong>Concierge</strong>
+              <span>Empfang, Koordination, Alltagshilfe</span>
+            </div>
+
+            <div class="feature">
+              <strong>Sicherheit</strong>
+              <span>Zugang, Präsenz, Prävention</span>
+            </div>
+
+            <div class="feature">
+              <strong>Community</strong>
+              <span>Privatheit, Vertrauen, Ruhe</span>
+            </div>
+
+            <div class="feature">
+              <strong>Nachhaltigkeit</strong>
+              <span>Strom, Wärme, Effizienz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projekte">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">Vorzeigeprojekt</div>
+
+          <h2>Cologne Project - eine geschützte Wohnadresse am Rhein.</h2>
+
+          <p>
+            Direkt am Rheinufer entsteht ein außergewöhnliches Wohnensemble rund um den
+            historischen Wasserturm von 1881. Ein Ort für Menschen, die Architektur,
+            Privatheit und verlässlichen Service als Teil ihrer Lebensqualität verstehen.
+          </p>
+        </div>
+
+        <article class="project-highlight">
+          <div
+            class="project-highlight-image"
+            style="background-image: url('bilder/hero-aussen.jpg');"
+            role="img"
+            aria-label="Cologne Project mit Wasserturm und privaten Gärten"
+          ></div>
+
+          <div class="project-highlight-content">
+            <div class="eyebrow">Köln · Rheinlage</div>
+
+            <h3>Historie, Komfort und Sicherheit in einem Ensemble.</h3>
+
+            <p>
+              Das Cologne Project verbindet hochwertige Apartments, Townhouses und Lofts
+              mit einem geschützten Wohnkonzept. Der revitalisierte Wasserturm bildet das
+              architektonische Zentrum und verleiht dem Ensemble seine besondere Identität.
+            </p>
+
+            <p>
+              Concierge Service, Sicherheitsdienst und kontrollierte Zugänge schaffen ein
+              Wohngefühl, das Ruhe und Freiheit miteinander verbindet. Die Einheiten sind
+              hochwertig gebaut und können individuell an persönliche Anforderungen
+              angepasst werden.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Rheinlage</span>
+              <span class="tag">Wasserturm 1881</span>
+              <span class="tag">Gated Community</span>
+              <span class="tag">Concierge</span>
+              <span class="tag">Sicherheitsdienst</span>
+              <span class="tag">Nachhaltige Versorgung</span>
+            </div>
+
+            <a class="button" href="[cologne-project.de](https://www.cologne-project.de)" target="_blank" rel="noopener">
+              Cologne Project ansehen
+            </a>
+          </div>
+        </article>
+
+        <div class="projects-small">
+          <article class="project-card">
+            <div
+              class="project-card-image"
+              style="background-image: url('bilder/loft-wasserturm.jpg');"
+              role="img"
+              aria-label="Loft im historischen Wasserturm"
+            ></div>
+
+            <div class="project-card-body">
+              <h3>Watertower Lofts</h3>
+
+              <p>
+                Repräsentative Wohnräume im historischen Wasserturm mit großzügiger Höhe,
+                warmen Materialien und Blick über Köln.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Loft</span>
+                <span class="tag">Historische Substanz</span>
+                <span class="tag">Rheinblick</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div
+              class="project-card-image"
+              style="background-image: url('bilder/wohnung-terrasse.jpg');"
+              role="img"
+              aria-label="Hochwertige Wohnung mit Terrasse"
+            ></div>
+
+            <div class="project-card-body">
+              <h3>Private Residences</h3>
+
+              <p>
+                Helle Wohnungen und Townhouses mit privaten Außenbereichen,
+                hochwertigen Oberflächen und ruhiger Einbettung in das Ensemble.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Townhouses</span>
+                <span class="tag">Apartments</span>
+                <span class="tag">Private Gärten</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="soft">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">Galerie</div>
+
+          <h2>Architektur, Ruhe und ein geschütztes Wohngefühl.</h2>
+
+          <p>
+            Die Bildwelt zeigt den Anspruch des Projekts: klare Architektur, hochwertige
+            Innenräume, geschützte Zugänge und private Rückzugsorte in einem grünen Umfeld.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <div
+            class="gallery-item large"
+            style="background-image: url('bilder/vogelperspektive.jpg');"
+            role="img"
+            aria-label="Vogelperspektive des Cologne Project am Rhein"
+          ></div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('bilder/gated-einfahrt.jpg');"
+            role="img"
+            aria-label="Gated Einfahrt"
+          ></div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('bilder/concierge-lobby.jpg');"
+            role="img"
+            aria-label="Concierge Lobby"
+          ></div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('bilder/loft-wasserturm.jpg');"
+            role="img"
+            aria-label="Loft im Wasserturm"
+          ></div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('bilder/community-tag.jpg');"
+            role="img"
+            aria-label="Community bei Tag"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="container">
+        <blockquote>
+          "Wir entwickeln keine anonymen Anlagen. Wir schaffen Orte, an denen Sicherheit,
+          Service und architektonische Qualität selbstverständlich zusammenfinden."
+        </blockquote>
+
+        <span>Johanis Capital</span>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+
+            <h2>Diskret ins Gespräch kommen.</h2>
+
+            <p>
+              Ob Grundstück, Projektpartnerschaft oder Interesse an einer unserer
+              Wohnentwicklungen: Wir sprechen persönlich, verbindlich und mit dem nötigen
+              Verständnis für anspruchsvolle Immobilien.
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <div>
+              <strong>Johanis Capital</strong><br />
+              Beständig. Sicher. Vertraut.
+            </div>
+
+            <div>
+              <strong>E-Mail</strong><br />
+              kontakt@johanis-capital.de
+            </div>
+
+            <div>
+              <strong>Standort</strong><br />
+              Köln / DACH-Raum
+            </div>
+
+            <a class="button" href="mailto:kontakt@johanis-capital.de">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <img src="bilder/logo.jpg" alt="Johanis Capital Logo" />
+
+      <div>
+        © Johanis Capital. Projektentwicklung für geschützte Wohnwelten.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
